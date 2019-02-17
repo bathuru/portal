@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.spider.springmvc.dao.impl.EmployeeDAOImpl;
 import com.spider.springmvc.domain.Employee;
 import com.spider.springmvc.service.EmployeeService;
 
 @Controller
 public class EmployeeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(EmployeeDAOImpl.class);
+	private final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 	
 	@Autowired(required = false)
 	private EmployeeService employeeService;

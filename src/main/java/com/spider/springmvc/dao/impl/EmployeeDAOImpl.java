@@ -15,7 +15,7 @@ import com.spider.springmvc.domain.Employee;
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
 	
-	private static final Logger logger = LoggerFactory.getLogger(EmployeeDAOImpl.class);
+	private final Logger logger = LoggerFactory.getLogger(EmployeeDAOImpl.class);
 
 	@Autowired(required = false)
 	private SessionFactory sessionFactory;
