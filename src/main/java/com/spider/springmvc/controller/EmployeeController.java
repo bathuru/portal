@@ -31,11 +31,6 @@ public class EmployeeController {
 		
 		logger.info("Controller : getAllEmployees");
 		List list = employeeService.getAllEmployees();
-		
-		if (list == null) {
-			logger.info("List is Empty");
-			list.add(new Employee());
-		}
 					
 		model.addAttribute("listEmployees", list);
 		return "displayAllEmployee";
