@@ -1,5 +1,8 @@
 package com.spider.springmvc.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.spider.springmvc.domain.Employee;
 import com.spider.springmvc.service.EmployeeService;
 
+
 @Controller
 public class EmployeeController {
 	
@@ -22,17 +26,18 @@ public class EmployeeController {
 	@Autowired(required = false)
 	private EmployeeService employeeService;
 	
-	@Autowired(required=true)
-	@Qualifier(value="employeeService")
-	public void setEmployeeService(EmployeeService ps){
-		this.employeeService = ps;
-	}
-
 	@RequestMapping(value = "/employees", method = RequestMethod.GET)
 	public String getAllEmployees(Model model) {
 		
-		logger.info("Controller : All Employees");
-		model.addAttribute("listEmployees", employeeService.listEmployees());
+		logger.info("Controller : getAllEmployees");
+		List list = employeeService.getAllEmployees();
+		
+		if (list == null) {
+			logger.info("List is Empty");
+			list.add(new Employee());
+		}
+					
+		model.addAttribute("listEmployees", list);
 		return "displayAllEmployee";
 	}
 	

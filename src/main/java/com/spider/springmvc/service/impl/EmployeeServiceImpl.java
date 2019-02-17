@@ -19,34 +19,25 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	@Autowired(required = false)
 	private EmployeeDAO employeeDAO;
-
-	public void setEmployeeDAO(EmployeeDAO EmployeeDAO) {
-		this.employeeDAO = EmployeeDAO;
-	}
-
+	
 	@Transactional
-	public void addEmployee(Employee p) {
-		
+	public List<Employee> getAllEmployees() {
+		System.out.println("Service >> getAllEmployees");
+		return this.employeeDAO.getAllEmployees();
+	}
+	@Transactional
+	public void addEmployee(Employee p) {		
 		logger.info("ADD In ServiceImpl");
 		this.employeeDAO.addEmployee(p);
 	}
-
 	@Transactional
 	public void updateEmployee(Employee p) {
 		this.employeeDAO.updateEmployee(p);
 	}
-
-	@Transactional
-	public List<Employee> listEmployees() {
-		System.out.println("ALL-In ServiceImpl");
-		return this.employeeDAO.listEmployees();
-	}
-
 	@Transactional
 	public Employee getEmployeeById(int id) {
 		return this.employeeDAO.getEmployeeById(id);
 	}
-
 	@Transactional
 	public void removeEmployee(int id) {
 		

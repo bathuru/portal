@@ -35,7 +35,7 @@ public class EmployeeControllerTest {
 	public String listEmployees(Model model) {
 		
 		System.out.println("Controller : All Employees");
-		model.addAttribute("listEmployees", employeeService.listEmployees());
+		model.addAttribute("listEmployees", employeeService.getAllEmployees());
 		return "Employee";
 	}
 	
