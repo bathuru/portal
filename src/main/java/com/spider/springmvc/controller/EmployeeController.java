@@ -73,7 +73,6 @@ public class EmployeeController {
 	@RequestMapping(value = "/add")
 	public String testEmployees(Model model) {
 		
-		System.out.println("In Test !!!");
 		return "addEmployee";
 	}
 }
