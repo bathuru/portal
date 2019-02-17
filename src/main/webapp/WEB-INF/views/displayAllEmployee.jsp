@@ -36,6 +36,6 @@
 	</table>
 </c:if>
 <br/><br>
-   <a href="http://localhost:8090/spring-hibernate-mvc/add" class="tg">Add New Employee</a>  
+   <a href="addEmployee.jsp" class="tg">Add New Employee</a>  
 </body>
 </html>
