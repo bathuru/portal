@@ -11,7 +11,7 @@
 	Update Employee Details:
 </h3>
 
-<c:url var="addAction" value="/Employee/update" ></c:url>
+<c:url var="addAction" value="/employee/update" ></c:url>
 
 <form:form action="${addAction}" commandName="employee">
 <table style=" font-family:serif; font-size:medium; border-width:2px; border-color:#ccc; ">

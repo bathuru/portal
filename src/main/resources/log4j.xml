@@ -17,7 +17,7 @@
 </appender>
 
 <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
-	<param name="Threshold" value="INFO" />
+	<param name="Threshold" value="DEBUG" />
 	<param name="File" value="springmvc.log" />
 	<layout class="org.apache.log4j.PatternLayout">
 		<param name="ConversionPattern" value="%d %-5p [%-20.45c{3}] %m %n" />
