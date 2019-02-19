@@ -1,12 +1,10 @@
 package com.spider.springmvc.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -30,7 +28,7 @@ public class EmployeeController {
 	public String getAllEmployees(Model model) {
 		
 		logger.info("Controller : getAllEmployees");
-		List list = employeeService.getAllEmployees();
+		List<Employee> list = employeeService.getAllEmployees();
 					
 		model.addAttribute("listEmployees", list);
 		return "displayAllEmployee";
