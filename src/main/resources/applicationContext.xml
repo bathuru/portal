@@ -32,7 +32,7 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="annotatedClasses">
 			<beans:list>
-				<beans:value>com.spider.springmvc.domain.Employee</beans:value>
+				<beans:value>com.devops.springmvc.domain.Employee</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
