@@ -1,4 +1,4 @@
-package com.spider.springmvc.model;
+package com.devops.springmvc.model;
 
 public class User {
 	private String userName;

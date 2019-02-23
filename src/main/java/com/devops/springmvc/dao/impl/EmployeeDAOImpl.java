@@ -1,4 +1,4 @@
-package com.spider.springmvc.dao.impl;
+package com.devops.springmvc.dao.impl;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.spider.springmvc.dao.EmployeeDAO;
-import com.spider.springmvc.domain.Employee;
+import com.devops.springmvc.dao.EmployeeDAO;
+import com.devops.springmvc.domain.Employee;
 
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {

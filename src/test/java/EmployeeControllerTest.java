@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.spider.springmvc.domain.Employee;
-import com.spider.springmvc.service.EmployeeService;
+import com.devops.springmvc.domain.Employee;
+import com.devops.springmvc.service.EmployeeService;
 
 @Controller
 public class EmployeeControllerTest {
