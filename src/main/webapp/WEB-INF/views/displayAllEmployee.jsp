@@ -29,13 +29,13 @@
 			<td>${emp.id}</td>
 			<td>${emp.name}</td>
 			<td>${emp.country}</td>
-			<td><a href="<c:url value='/edit/${emp.id}' />" >Edit</a></td>
-			<td><a href="<c:url value='/remove/${emp.id}' />" >Delete</a></td>
+			<td><a href="<c:url value='/employee/${emp.id}' />" >Edit</a></td>
+			<td><a href="<c:url value='/employee/remove/${emp.id}' />" >Delete</a></td>
 		</tr>
 	</c:forEach>
 	</table>
 </c:if>
 <br/><br>
-   <a href="http://localhost:8090/SpringMVCHibernate/add" class="tg">Add New Employee</a>  
+   <a href="http://localhost:8090/spring-hibernate-mvc/add" class="tg">Add New Employee</a>  
 </body>
 </html>

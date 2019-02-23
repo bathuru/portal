@@ -15,17 +15,21 @@ import com.spider.springmvc.domain.Employee;
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
 	
-	private static final Logger logger = LoggerFactory.getLogger(EmployeeDAOImpl.class);
+	private final Logger logger = LoggerFactory.getLogger(EmployeeDAOImpl.class);
 
 	@Autowired(required = false)
 	private SessionFactory sessionFactory;
-	
-	public void setSessionFactory(SessionFactory sf){
-		this.sessionFactory = sf;
-	}
 
+	@SuppressWarnings("unchecked")
+	public List<Employee> getAllEmployees() {
+		System.out.println("DAO >> getAllEmployees");
+		
+		Session session = this.sessionFactory.getCurrentSession();
+		List<Employee> EmployeesList = session.createQuery("from Employee").list();
+		return EmployeesList;
+	}
+	
 	public void addEmployee(Employee p) {
-		System.out.println("ADD In DAO");
 		
 		Session session = this.sessionFactory.getCurrentSession();
 		session.persist(p);
@@ -37,15 +41,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.update(p);
 		logger.info("Employee updated successfully, Employee Details="+p);
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<Employee> listEmployees() {
-		System.out.println("In DAOImpl");
-		
-		Session session = this.sessionFactory.getCurrentSession();
-		List<Employee> EmployeesList = session.createQuery("from Employee").list();
-		return EmployeesList;
 	}
 
 	public Employee getEmployeeById(int id) {

@@ -1,0 +1,8 @@
+##Properties
+
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.dialect=org.hibernate.dialect.MySQLDialect
+
+jdbc.databaseUrl=jdbc:mysql://127.0.0.1:3306/sprimg-hibernate-mvc
+jdbc.username=root
+jdbc.password=Srinu@116

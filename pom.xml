@@ -1,23 +1,26 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.devops</groupId>
-  <artifactId>spring-hibernate-mvc</artifactId>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.devops.projects</groupId>
+	<artifactId>spring-hibernate-mvc</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name></name> 	
-  
+
 	<!-- Shared Version number properties -->
 	<properties>
 		<spring.version>4.3.9.RELEASE</spring.version>
 		<spring.security.version>3.1.2.RELEASE</spring.security.version>
 		<hibernate.version>4.0.0.Final</hibernate.version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
-				<org.aspectj-version>1.7.4</org.aspectj-version>
+		<org.aspectj-version>1.7.4</org.aspectj-version>
 	</properties>
 
 	<repositories>
 		<repository>
+
 			<id>JBoss repository</id>
 			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
 		</repository>
@@ -69,7 +72,7 @@
 			<artifactId>spring-web</artifactId>
 			<version>4.3.9.RELEASE</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -123,47 +126,42 @@
 <!-- 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-annotations</artifactId>
-			<version>4.3.5.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate</artifactId>
-			<version>4.3.5.Final</version>
+			<version>3.5.6-Final</version>
 		</dependency> -->
-		
+
 		<!-- End Hibernate dependencies -->
 
-	<!-- common database connection pooling -->
-	<dependency>
-		<groupId>commons-dbcp</groupId>
-		<artifactId>commons-dbcp</artifactId>
-		<version>1.4</version>
-	</dependency>
+		<!-- common database connection pooling -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
 
-	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-	<dependency>
-		<groupId>mysql</groupId>
-		<artifactId>mysql-connector-java</artifactId>
-		<version>5.1.45</version>
-	</dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+		</dependency>
 
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
-		</dependency>	
+		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.oracle</groupId> -->
-<!-- 			<artifactId>ojdbc7</artifactId> -->
-<!-- 			<version>12.1.0.1.0</version> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>javassist</groupId> -->
-<!-- 			<artifactId>javassist</artifactId> -->
-<!-- 			<version>13.12.1.GA</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.oracle</groupId> -->
+		<!-- <artifactId>ojdbc7</artifactId> -->
+		<!-- <version>12.1.0.1.0</version> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>javassist</groupId> -->
+		<!-- <artifactId>javassist</artifactId> -->
+		<!-- <version>13.12.1.GA</version> -->
+		<!-- </dependency> -->
 
 		<!-- dom4j is an open source XML framework for java. dom4j allows you to 
 			read, write, navigate, create and modify XML documents. dom4j integrates 
@@ -212,26 +210,21 @@
 			<version>1.2</version>
 		</dependency>
 
-		 <dependency> <groupId>log4j</groupId> 
-		<artifactId>log4j</artifactId> 
-			<version>1.2.17</version> 
-			</dependency> 
-			<dependency> 
-			<groupId>org.slf4j</groupId> 
-			<artifactId>slf4j-api</artifactId> 
-			<version>${org.slf4j-version}</version> 
-			</dependency> 
-					<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${org.slf4j-version}</version>
-			<scope>runtime</scope>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
 		</dependency>
-			<dependency>
-			 <groupId>org.slf4j</groupId> 
-			 <artifactId>slf4j-log4j12</artifactId> 
-			<version>${org.slf4j-version}</version> 
-			</dependency> 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.transaction/jta -->
 		<dependency>
@@ -239,7 +232,6 @@
 			<artifactId>jta</artifactId>
 			<version>1.1</version>
 		</dependency>
-
 
 	</dependencies>
 
@@ -257,12 +249,11 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.0.0</version>
 				<configuration>
-					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
 		</plugins>
 		<finalName>${project.artifactId}</finalName> <!-- added to remove Version from WAR file -->
 	</build>
-  
-  
+
 </project>

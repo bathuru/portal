@@ -14,7 +14,7 @@
  
     <h3>Registration Form</h3>
   
-    <form:form method="POST" modelAttribute="Employee" action="Employee/add">
+    <form:form method="POST" modelAttribute="Employee" action="employee/add">
         <table style=" font-family:serif; font-size:medium; border-width:2px; border-color:#ccc ">
         
             <tr>
