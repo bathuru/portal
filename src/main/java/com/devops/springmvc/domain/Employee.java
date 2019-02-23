@@ -1,4 +1,4 @@
-package com.spider.springmvc.domain;
+package com.devops.springmvc.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

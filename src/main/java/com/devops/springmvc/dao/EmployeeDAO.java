@@ -1,8 +1,8 @@
-package com.spider.springmvc.dao;
+package com.devops.springmvc.dao;
 
 import java.util.List;
 
-import com.spider.springmvc.domain.Employee;
+import com.devops.springmvc.domain.Employee;
 
 public interface EmployeeDAO {
 

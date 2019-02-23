@@ -1,8 +1,8 @@
-package com.spider.springmvc.service;
+package com.devops.springmvc.service;
 
 import java.util.List;
 
-import com.spider.springmvc.domain.Employee;
+import com.devops.springmvc.domain.Employee;
 
 public interface EmployeeService {
 
