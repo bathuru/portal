@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.devops.projects</groupId>
-	<artifactId>spring-hibernate-mvc</artifactId>
+	<artifactId>springmvc</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name></name> 	
