@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<h3>All Persons Details</h3>
+<h3>All Employee Details</h3>
 <c:if test="${!empty listEmployees}">
 	<table class="tg">
 	<tr>
@@ -36,6 +36,6 @@
 	</table>
 </c:if>
 <br/><br>
-   <a href="http://localhost:8090/spring-hibernate-mvc/add" class="tg">Add New Employee</a>  
+   <a href="http://localhost:8090/springmvc/add" class="tg">Add New Employee</a>  
 </body>
 </html>

@@ -10,7 +10,7 @@
 <body>
 	<h3>Welcome to Employee Portal !!!</h3>
 
-<a href="http://localhost:8090/spring-hibernate-mvc/employees"> Employee List</a>
+<a href="http://localhost:8090/springmvc/employees"> Employee List</a>
 
 </body>
 </html>
