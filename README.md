@@ -11,6 +11,6 @@ Table & Data
 # drop table portal.employee 
 
 URL
-#  http://localhost:8080/springmvc
-#  http://127.0.0.1:8080/springmvc
+#  http://localhost:8080/portal
+#  http://127.0.0.1:8080/portal
 
