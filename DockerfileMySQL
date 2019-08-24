@@ -8,3 +8,5 @@ EXPOSE 3306
 
 # docker build -t bathurudocker/dockermysql .
 # docker push bathurudocker/dockermysql:latest
+
+
