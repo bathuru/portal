@@ -61,6 +61,7 @@ node{
 	   Job Name: ${env.JOB_NAME}
 	   Job URL : ${env.JOB_URL}
 	   
+	   
 Thanks
 DevOps Team""", 
              cc: '', 
