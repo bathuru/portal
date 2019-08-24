@@ -3,6 +3,6 @@
 jdbc.driverClassName=com.mysql.jdbc.Driver
 jdbc.dialect=org.hibernate.dialect.MySQLDialect
 
-jdbc.databaseUrl=jdbc:mysql://127.0.0.1:3306/portal
+jdbc.databaseUrl=jdbc:mysql:dockermysql:3306/portal
 jdbc.username=root
-jdbc.password=Srinu@116
+jdbc.password=root
