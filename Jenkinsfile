@@ -33,6 +33,7 @@ node{
     stage('Remove Previous Container'){
 	try{
             sh 'docker rm -f portal'
+            sh 'docker rm -f dockermysql'
 	    sh 'docker rmi bathurudocker/portal'
 	}catch(error){
 		//  do nothing if there is an exception
@@ -50,7 +51,8 @@ node{
    }
   
    stage('Run Container'){
-     sh 'docker run -p 8080:8080 -d --name portal bathurudocker/portal:latest'
+     sh 'docker run --name dockermysql -p 3306:3306 -d bathurudocker/mysql'	   
+     sh 'docker run --name portal -p 8080:8080 -d --link dockermysql:mysql -d bathurudocker/portal'
    }
    
     stage('Email Notification'){
