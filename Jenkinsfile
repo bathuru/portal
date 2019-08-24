@@ -50,7 +50,7 @@ node{
    }
   
    stage('Run Container'){
-     sh 'docker run -p 8090:8080 -d --name portal bathurudocker/portal:latest'
+     sh 'docker run -p 8080:8080 -d --name portal bathurudocker/portal:latest'
    }
    
     stage('Email Notification'){
