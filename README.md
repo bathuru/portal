@@ -9,6 +9,8 @@ Table & Data
 # select * from portal.employee
 # drop table portal.employee 
 # select * from portal.files
+
+URL
 #  http://localhost:8080/springmvc
 #  http://127.0.0.1:8080/springmvc
 
