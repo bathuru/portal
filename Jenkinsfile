@@ -23,8 +23,8 @@ node{
                            packages: [[$class: 'MavenPackage', 
                      mavenAssetList: [[classifier: '', 
                           extension: '', 
-                           filePath: '/Users/srinivas/.jenkins/workspace/dashboard/target/dashboard-1.0.war']], 
-                    mavenCoordinate: [artifactId: 'dashboard', 
+                           filePath: '/Users/srinivas/.jenkins/workspace/portal/target/portal.war']], 
+                    mavenCoordinate: [artifactId: 'portal', 
                             groupId: 'com.itsmydevops', 
                           packaging: 'war', 
                             version: '1.0']]]
@@ -32,25 +32,25 @@ node{
    } 
     stage('Remove Previous Container'){
 	try{
-            sh 'docker rm -f dashboard'
-	    sh 'docker rmi bathurudocker/dashboard'
+            sh 'docker rm -f portal'
+	    sh 'docker rmi bathurudocker/portal'
 	}catch(error){
 		//  do nothing if there is an exception
 	}
  }
   stage('Build Docker Image'){ 
-     sh 'docker build -t bathurudocker/dashboard:latest .'
+     sh 'docker build -t bathurudocker/portal:latest .'
    }
    
   stage('Push Docker Image'){
      withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerpwd')]) {
         sh "docker login -u bathurudocker -p ${dockerpwd}"
      }
-     sh 'docker push bathurudocker/dashboard:latest'
+     sh 'docker push bathurudocker/portal:latest'
    }
   
    stage('Run Container'){
-     sh 'docker run -p 8090:8080 -d --name dashboard bathurudocker/dashboard:latest'
+     sh 'docker run -p 8090:8080 -d --name portal bathurudocker/portal:latest'
    }
    
     stage('Email Notification'){
@@ -64,7 +64,7 @@ DevOps Team""",
              cc: '', 
            from: '', 
         replyTo: '', 
-        subject: 'Jenkins Job Status', 
+        subject: 'Portal - Jenkins Job Status', 
              to: 'srinivas.bathuru@gmail.com'
         attachLog: 'true'
    }
