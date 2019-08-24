@@ -7,8 +7,8 @@ Table & Data
 # insert into portal.employee (employee_id,emplopyee_name,employee_city) values (333,'Siri','Australia');
 
 # select * from portal.employee
-# drop table portal.employee 
 # select * from portal.files
+# drop table portal.employee 
 
 URL
 #  http://localhost:8080/springmvc
