@@ -51,7 +51,7 @@ node{
    }
   
    stage('Run Container'){
-     sh 'docker run --name dockermysql -p 3306:3306 -d bathurudocker/mysql'	   
+     sh 'docker run --name dockermysql -p 3306:3306 -d bathurudocker/dockermysql'	   
      sh 'docker run --name portal -p 8080:8080 -d --link dockermysql:mysql -d bathurudocker/portal'
    }
    
