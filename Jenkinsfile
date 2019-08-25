@@ -41,6 +41,7 @@ node{
  }
   stage('Build Docker Image'){ 
      sh 'docker build -t bathurudocker/portal:latest .'
+     sh 'docker build -t bathurudocker/dockermysql:latest DockerfileMySQL'
    }
    
   stage('Push Docker Image'){
@@ -51,7 +52,7 @@ node{
    }
   
    stage('Run Container'){
-     sh 'docker run --name dockermysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=portal -p 3306:3306 -d mysql:5.6'	   
+     sh 'docker run --name dockermysql -p 3306:3306 -d bathurudocker/dockermysql'	   
      sh 'docker run -p 8080:8080 --name myportal --link dockermysql:mysql -d bathurudocker/portal'
    }
    
