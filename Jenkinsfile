@@ -35,6 +35,7 @@ node{
             sh 'docker rm -f myportal'
             sh 'docker rm -f dockermysql'
 	    sh 'docker rmi bathurudocker/portal'
+	    sh 'docker rmi bathurudocker/dockermysql'
 	}catch(error){
 		//  do nothing if there is an exception
 	}
