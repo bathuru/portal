@@ -32,7 +32,7 @@ node{
    } 
     stage('Remove Previous Container'){
 	try{
-            sh 'docker rm -f portal'
+            sh 'docker rm -f myportal'
             sh 'docker rm -f dockermysql'
 	    sh 'docker rmi bathurudocker/portal'
 	}catch(error){
