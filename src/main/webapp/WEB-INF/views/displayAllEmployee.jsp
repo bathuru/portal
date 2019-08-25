@@ -36,6 +36,6 @@
 	</table>
 </c:if>
 <br/><br>
-   <a href="http://localhost:8080/springmvc/add" class="tg">Add New Employee</a>  
+   <a href="http://localhost:8080/portal/add" class="tg">Add New Employee</a>  
 </body>
 </html>
