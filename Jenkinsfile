@@ -52,7 +52,7 @@ node{
   
    stage('Run Container'){
      sh 'docker run --name dockermysql -p 3306:3306 -d bathurudocker/dockermysql'	   
-     sh 'docker run -p 8080:8080 --name myportal --link dockermysql:mysql -d portal'
+     sh 'docker run -p 8080:8080 --name myportal --link dockermysql:mysql -d bathurudocker/portal'
    }
    
     stage('Email Notification'){
