@@ -42,7 +42,7 @@ node{
  }
   stage('Build Docker Image'){ 
      sh 'docker build -t bathurudocker/portal:latest .'
-     sh 'docker build -f DockerfileMySQL -t bathurudocker/dockermysql:latest .'
+     sh 'docker build -f DockerfileMysql -t bathurudocker/portaldb:latest .'
    }
    
   stage('Push Docker Image'){
