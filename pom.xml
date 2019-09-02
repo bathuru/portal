@@ -153,17 +153,6 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
-		<!-- <dependency> -->
-		<!-- <groupId>com.oracle</groupId> -->
-		<!-- <artifactId>ojdbc7</artifactId> -->
-		<!-- <version>12.1.0.1.0</version> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>javassist</groupId> -->
-		<!-- <artifactId>javassist</artifactId> -->
-		<!-- <version>13.12.1.GA</version> -->
-		<!-- </dependency> -->
-
 		<!-- dom4j is an open source XML framework for java. dom4j allows you to 
 			read, write, navigate, create and modify XML documents. dom4j integrates 
 			with DOM and SAX and is seamlessly integrates with full XPath support -->
