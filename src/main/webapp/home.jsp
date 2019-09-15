@@ -8,7 +8,7 @@
 <title>Home</title>
 </head>
 <body>
-	</br></br></br>
+	</br>
 	<h3>Welcome to Employee Portal !!!</h3>
 
 <a href="<%=request.getContextPath() %>/employees"> Employee List </a>
