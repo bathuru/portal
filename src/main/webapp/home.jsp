@@ -11,7 +11,7 @@
 	</br></br></br>
 	<h3>Welcome to Employee Portal !!!</h3>
 
-<a href="http://localhost:8080/portal/employees"> Employee List</a>
+<a href="<%=request.getContextPath() %>/employees"> Employee List </a>
 
 </body>
 </html>
