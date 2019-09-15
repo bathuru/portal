@@ -36,6 +36,6 @@
 	</table>
 </c:if>
 <br/><br>
-   <a href="http://localhost:8080/portal/add" class="tg">Add New Employee</a>  
+   <a href="<%=request.getContextPath() %>/add" class="tg"> Add New Employee </a>
 </body>
 </html>
