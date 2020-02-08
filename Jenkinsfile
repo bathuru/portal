@@ -59,7 +59,10 @@ node{
    
     stage('Email Notification'){
       emailext  bcc: '', 
-           body: """Hi Team, Your project successfully Build and Deployed.
+           body: """Hi Team, 
+	   
+Your project successfully Build and Deployed.
+
 	   Job Name: ${env.JOB_NAME}
 	   Job URL : ${env.JOB_URL}
 	   
