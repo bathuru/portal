@@ -8,6 +8,7 @@ node{
      def mvnHome = tool name: 'Maven', type: 'maven'
      def mvnCMD = "${mvnHome}/bin/mvn"
      sh "${mvnCMD} clean package"
+	   sh echo ${env.DOCKER_HOME}   
    }
 
    stage('SonarQube Analysis') {
