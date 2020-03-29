@@ -1,24 +1,19 @@
 node{
-
-  def buildNumber = BUILD_NUMBER 
-  def jobname = ${env.JOB_NAME}
-  def joburl = ${env.JOB_URL}
-
    stage('GitHub Checkout'){
        git credentialsId: 'GitHubCredentials', 
-                     url: 'https://github.com/itsmydevops/portal.git',
-		 branch : 'master'
+                     url: 'https://github.com/itsmydevops/portal.git'
    }
    
    stage('Maven Build'){
-     def mavenHome = tool name: 'Maven', type: 'maven'
-     sh "${mavenHome}/bin/mvn clean package"
+     def mvnHome = tool name: 'Maven', type: 'maven'
+     def mvnCMD = "${mvnHome}/bin/mvn"
+     sh "${mvnCMD} clean package"
    }
 
    stage('SonarQube Analysis') {
-        def mavenHome =  tool name: 'Maven', type: 'maven'
+        def mvnHome =  tool name: 'Maven', type: 'maven'
         withSonarQubeEnv('SonarQubeServer') { 
-          sh "${mavenHome}/bin/mvn sonar:sonar"
+          sh "${mvnHome}/bin/mvn sonar:sonar"
         }
     }
    
@@ -35,10 +30,8 @@ node{
                             version: '1.0']]]
    
    } 
-
-  stage('Build & Deploy thru Docker'){ 
-
-    try{
+    stage('Remove Previous Container'){
+	try{
             sh 'docker rm -f portal'
             sh 'docker rm -f portaldb'
 	    sh 'docker rmi bathurudocker/portal'
@@ -46,27 +39,32 @@ node{
 	}catch(error){
 		//  do nothing if there is an exception
 	}
+	    
 
-     sh 'docker build -t bathurudocker/portal:${buildNumber} .'
-     sh 'docker build -f DockerfileMysql -t bathurudocker/portaldb:${buildNumber} .'
+     sh 'docker build -t bathurudocker/portal:latest .'
+     sh 'docker build -f DockerfileMysql -t bathurudocker/portaldb:latest .'
+
+   
 
      withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerpwd')]) {
         sh "docker login -u bathurudocker -p ${dockerpwd}"
      }
-     sh 'docker push bathurudocker/portal:${buildNumber}'
+     sh 'docker push bathurudocker/portal:latest'
+
+  
 
      sh 'docker run --name portaldb -p 3306:3306 -d bathurudocker/portaldb'	   
      sh 'docker run -p 8080:8080 --name portal --link portaldb:mysql -d bathurudocker/portal'
    }
-
    
     stage('Email Notification'){
       emailext  bcc: '', 
            body: """Hi Team, 
 	   
 Your project successfully Build and Deployed.
-	   Job Name: jobname
-	   Job URL : joburl
+
+	   Job Name: ${env.JOB_NAME}
+	   Job URL : ${env.JOB_URL}
 	   
 	   
 Thanks
