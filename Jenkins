@@ -1,13 +1,13 @@
 node{
    stage('GitHub Checkout'){
        git credentialsId: 'GitHubCredentials', 
-                     url: 'https://github.com/itsmydevops/portal.git'
+                     url: 'https://github.com/itsmydevops/portal.git',
+		 branch : 'master'
    }
    
    stage('Maven Build'){
-     def mvnHome = tool name: 'Maven', type: 'maven'
-     def mvnCMD = "${mvnHome}/bin/mvn"
-     sh "${mvnCMD} clean package"
+     def mavenHome = tool name: 'Maven', type: 'maven'
+     sh "${mavenHome}/bin/mvn clean package"
    }
 
    stage('SonarQube Analysis') {
