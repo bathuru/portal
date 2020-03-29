@@ -1,6 +1,5 @@
 node{
-	
-	def buildnumber = ${BUILD_NUMBER}	
+		
    stage('GitHub Checkout'){
        git credentialsId: 'GitHubCredentials', 
                      url: 'https://github.com/itsmydevops/portal.git'
