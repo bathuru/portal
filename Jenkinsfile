@@ -8,7 +8,6 @@ node{
      def mvnHome = tool name: 'Maven', type: 'maven'
      def mvnCMD = "${mvnHome}/bin/mvn"
      sh "${mvnCMD} clean package"
-	   sh echo ${env.DOCKER_HOME}   
    }
 
    stage('SonarQube Analysis') {
@@ -33,7 +32,7 @@ node{
    } 
     stage('Docker Build & Deploy'){
 	    
-	withDockerServer([uri: 'tcp://127.0.0.1:2376']) {
+	withDockerServer([uri: 'tcp://127.0.0.1:6443']) {
   
 	try{
             sh 'docker rm -f portal'
