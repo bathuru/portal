@@ -1,6 +1,4 @@
 node{
-	def jobname = ${env.JOB_NAME}
-	def joburl = ${env.JOB_URL}	
 	
    stage('GitHub Checkout'){
        git credentialsId: 'GitHubCredentials', 
