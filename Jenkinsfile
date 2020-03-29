@@ -32,7 +32,7 @@ node{
    } 
     stage('Docker Build & Deploy'){
 	    
-	withDockerServer([uri: 'tcp://127.0.0.1:6443']) {
+	withDockerServer([uri: 'tcp://127.0.0.1:59765']) {
   
 	try{
             sh 'docker rm -f portal'
