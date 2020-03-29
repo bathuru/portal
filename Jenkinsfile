@@ -36,7 +36,7 @@ node{
    
    } 
 
-  stage('Build Docker Image'){ 
+  stage('Build & Deploy thru Docker'){ 
 
     try{
             sh 'docker rm -f portal'
