@@ -1,4 +1,7 @@
 node{
+	def jobname = ${env.JOB_NAME}
+	def joburl = ${env.JOB_URL}	
+	
    stage('GitHub Checkout'){
        git credentialsId: 'GitHubCredentials', 
                      url: 'https://github.com/itsmydevops/portal.git'
@@ -31,8 +34,6 @@ node{
    
    } 
     stage('Docker Build & Deploy'){
-	    
-	withDockerServer([uri: 'tcp://127.0.0.1:59765']) {
   
 	try{
             sh 'docker rm -f portal'
@@ -59,7 +60,6 @@ node{
      sh 'docker run --name portaldb -p 3306:3306 -d bathurudocker/portaldb'	   
      sh 'docker run -p 8080:8080 --name portal --link portaldb:mysql -d bathurudocker/portal'
    }
-    }
 	    
     stage('Email Notification'){
       emailext  bcc: '', 
