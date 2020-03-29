@@ -31,6 +31,9 @@ node{
    
    } 
     stage('Docker Build & Deploy'){
+	    
+	withDockerServer([uri: 'tcp://127.0.0.1:2376']) {
+  
 	try{
             sh 'docker rm -f portal'
             sh 'docker rm -f portaldb'
@@ -56,7 +59,8 @@ node{
      sh 'docker run --name portaldb -p 3306:3306 -d bathurudocker/portaldb'	   
      sh 'docker run -p 8080:8080 --name portal --link portaldb:mysql -d bathurudocker/portal'
    }
-   
+    }
+	    
     stage('Email Notification'){
       emailext  bcc: '', 
            body: """Hi Team, 
