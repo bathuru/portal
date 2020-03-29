@@ -16,9 +16,9 @@ node{
    }
 
    stage('SonarQube Analysis') {
-        def mvnHome =  tool name: 'Maven', type: 'maven'
+        def mavenHome =  tool name: 'Maven', type: 'maven'
         withSonarQubeEnv('SonarQubeServer') { 
-          sh "${mvnHome}/bin/mvn sonar:sonar"
+          sh "${mavenHome}/bin/mvn sonar:sonar"
         }
     }
    
@@ -35,8 +35,10 @@ node{
                             version: '1.0']]]
    
    } 
-    stage('Remove Previous Container'){
-	try{
+
+  stage('Build Docker Image'){ 
+
+    try{
             sh 'docker rm -f portal'
             sh 'docker rm -f portaldb'
 	    sh 'docker rmi bathurudocker/portal'
@@ -44,23 +46,19 @@ node{
 	}catch(error){
 		//  do nothing if there is an exception
 	}
- }
-  stage('Build Docker Image'){ 
+
      sh 'docker build -t bathurudocker/portal:${buildNumber} .'
      sh 'docker build -f DockerfileMysql -t bathurudocker/portaldb:${buildNumber} .'
-   }
-   
-  stage('Push Docker Image'){
+
      withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerpwd')]) {
         sh "docker login -u bathurudocker -p ${dockerpwd}"
      }
      sh 'docker push bathurudocker/portal:${buildNumber}'
-   }
-  
-   stage('Run Container'){
+
      sh 'docker run --name portaldb -p 3306:3306 -d bathurudocker/portaldb'	   
      sh 'docker run -p 8080:8080 --name portal --link portaldb:mysql -d bathurudocker/portal'
    }
+
    
     stage('Email Notification'){
       emailext  bcc: '', 
