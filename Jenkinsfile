@@ -30,7 +30,7 @@ node{
                             version: '1.0']]]
    
    } 
-    stage('Remove Previous Container'){
+    stage('Docker Build & Deploy'){
 	try{
             sh 'docker rm -f portal'
             sh 'docker rm -f portaldb'
