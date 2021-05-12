@@ -13,7 +13,7 @@
 	<!-- Shared Version number properties -->
 	<properties>
 		<spring.version>4.3.9.RELEASE</spring.version>
-		<spring.security.version>3.1.2.RELEASE</spring.security.version>
+		<spring.security.version>5.2.10.RELEASE</spring.security.version>
 		<hibernate.version>4.0.0.Final</hibernate.version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<org.aspectj-version>1.7.4</org.aspectj-version>
